@@ -7,8 +7,8 @@
                 <th class="lists__title"><span v-on:click="orderedName()">Titres</span></th>
                 <th class="lists__size"><span v-on:click="orderedSize()">Taille</span></th>
             </tr>
-            <tr v-for="item in PLAYLISTS" :key="item.id" class="lists__element">
-                <td class="lists__del">{{ item.size === 0 ? '&#10680;' : '' }}</td>
+            <tr v-for="item in PLAYLISTS" :key="item.id" class="lists__element" v-if="item.name">
+                <td class="lists__del"><span v-on:click="deleteItem(item)">{{ item.size === 0 ? '&#10680;' : '' }}</span></td>
                 <td class="lists__title">{{item.name}}</td>
                 <td class="lists__size">{{item.size}}</td>
             </tr>
@@ -63,7 +63,10 @@ export default {
                 PLAYLISTS.sort(dynamicSort("name"))
                 order = "nameDESC"
             }
-        }
+        },
+        deleteItem (item) {
+        item.name = null
+    }                     
     }
 }
 </script>

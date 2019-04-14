@@ -10,17 +10,16 @@
 <script>
 export default {
   name: 'compNav',
-  data () {
-    return {
-      msg: ''
-    }
-  },
     methods: {
-    clickAlbum: function () {
+    clickAlbum: function (button) {
       this.$emit('clicked', 'albums')
+      document.getElementsByClassName('nav__btn-playlists')[0].classList.remove('active');
+      document.getElementsByClassName('nav__btn-albums')[0].classList.add('active');
     },
-    clickPlaylists: function () {
-     this.$emit('clicked', 'playlists')
+    clickPlaylists: function (button) {
+     this.$emit('clicked', 'playlists')    
+      document.getElementsByClassName('nav__btn-albums')[0].classList.remove('active');
+      document.getElementsByClassName('nav__btn-playlists')[0].classList.add('active');
     }
   }
 }

@@ -93,6 +93,10 @@ export default {
             padding-left: 2rem;
             color: #000;
             font-weight: bold;
+
+                span {
+                    cursor:pointer;
+                }
         }
         .lists__title {
             text-align: left;
