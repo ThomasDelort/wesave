@@ -6,10 +6,10 @@
 
 <script>
 export default {
-  name: 'app',
+  name: 'compPlaylists',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: ''
     }
   }
 }

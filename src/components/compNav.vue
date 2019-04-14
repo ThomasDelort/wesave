@@ -1,88 +1,32 @@
 <template>
 
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-
-    <title>Test</title>
-</head>
-<body>
-    <compHeader :page=page></compHeader>
-   <!-- <compNav></compNav> -->
-
-      <nav>
+    <nav>
         <button v-on:click="clickAlbum()" class="nav__btn-albums active">Mes albums</button>
         <button v-on:click="clickPlaylists()" class="nav__btn-playlists">Mes playlists</button>
     </nav>
 
-    <compAlbums v-if="page === 'albums'"></compAlbums>
-
-</body>
-</html>
-
 </template>
 
 <script>
-import compHeader from './components/compHeader.vue'
-import compNav from './components/compNav.vue'
-import compAlbums from './components/compAlbums.vue'
-
-let page = "albums";
-
 export default {
-  name: 'app',
-  components: {
-    compHeader,
-    compNav,
-    compAlbums
-  },
+  name: 'compNav',
   data () {
     return {
-      page
+      msg: ''
     }
   },
     methods: {
     clickAlbum: function () {
-      this.page = "albums";
+      compHeader.title = "Mes albums"
     },
     clickPlaylists: function () {
-      this.page = "playlists";
+      compHeader.title = "Mes playlists"
     }
   }
 }
 </script>
 
 <style lang="scss">
-
-*,
-*::after,
-*::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: inherit;
-}
-
-html {
-    // 1rem = 10px
-    font-size: 62.5%; 
-    font-family: 'Lato', sans-serif;
-    background-color: #FFF;
-  }
-
-body {
-  box-sizing: border-box;
-  max-width: 114rem;
-  margin: 0 auto;
-  background-color: #212121;
-  color: #FFF;
-  height: 100vh;
-}
-
-// NAV
 
 nav {
 
@@ -126,6 +70,5 @@ nav {
           }
       }
   }
-
 
 </style>
