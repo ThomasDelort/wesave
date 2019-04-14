@@ -1,0 +1,16 @@
+.header {
+  height: 20rem;
+  background-image: linear-gradient(rgba($color-black,0.25), rgba($color-black,0.25)), url("./header.jpeg");
+  background-size: cover;
+  background-position: bottom;
+  position: relative;
+
+  h1 {
+    position: absolute;
+    bottom: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: 4.5rem;
+  }
+} 

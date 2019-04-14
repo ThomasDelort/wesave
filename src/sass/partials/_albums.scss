@@ -1,0 +1,45 @@
+.albums {
+    background-color: $color-background;
+    padding: 0 2rem;
+
+    table {
+        width: 100%;
+        border: 0;
+        border-spacing: 0;
+    }
+
+    tr:nth-child(odd) {
+        background-color: $color-background-light;
+    }
+
+    tr:first-child {
+        background-color: $color-background-title; 
+    }
+    
+    th, td {
+        font-size: 1.5rem;
+        line-height: 6rem;
+        height: 4rem;
+        font-weight: normal;
+    }
+    th span {
+        cursor: pointer;
+    }
+        
+        .albums__del {
+            width: 6rem;
+            padding-left: 2rem;
+            color: $color_black;
+            font-weight: bold;
+        }
+        .albums__title {
+            text-align: left;
+        }
+        .albums__size {
+            width: 6rem;
+            text-align: right;
+            padding-right: 2rem;
+        }
+}
+        
+

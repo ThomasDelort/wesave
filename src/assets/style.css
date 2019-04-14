@@ -1,0 +1,94 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%;
+  font-family: 'Lato', sans-serif;
+  background-color: #FFF; }
+
+body {
+  box-sizing: border-box;
+  max-width: 114rem;
+  margin: 0 auto;
+  background-color: #212121;
+  color: #FFF;
+  height: 100vh; }
+
+.header {
+  height: 20rem;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("./header.jpeg");
+  background-size: cover;
+  background-position: bottom;
+  position: relative; }
+  .header h1 {
+    position: absolute;
+    bottom: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: 4.5rem; }
+
+nav {
+  background-color: #212121;
+  padding: 2rem; }
+  nav:after {
+    content: "";
+    display: table;
+    clear: both; }
+  nav button {
+    padding: 2rem;
+    text-decoration: none;
+    text-align: center;
+    font-size: 1.5rem;
+    display: block;
+    float: left;
+    background-color: #000;
+    border: 0;
+    color: #FFF;
+    text-transform: uppercase;
+    width: calc((100% - 2rem) / 2);
+    outline: none;
+    cursor: pointer; }
+    nav button:first-child {
+      margin-right: 2rem; }
+    @media (max-width: 37.5em) {
+      nav button {
+        width: calc(100%); }
+        nav button:last-child {
+          margin-top: 2rem; } }
+    nav button.active {
+      color: #fec107; }
+
+.albums {
+  background-color: #212121;
+  padding: 0 2rem; }
+  .albums table {
+    width: 100%;
+    border: 0;
+    border-spacing: 0; }
+  .albums tr:nth-child(odd) {
+    background-color: #373737; }
+  .albums tr:first-child {
+    background-color: #907114; }
+  .albums th, .albums td {
+    font-size: 1.5rem;
+    line-height: 6rem;
+    height: 4rem;
+    font-weight: normal; }
+  .albums th span {
+    cursor: pointer; }
+  .albums .albums__del {
+    width: 6rem;
+    padding-left: 2rem;
+    color: #000;
+    font-weight: bold; }
+  .albums .albums__title {
+    text-align: left; }
+  .albums .albums__size {
+    width: 6rem;
+    text-align: right;
+    padding-right: 2rem; }
