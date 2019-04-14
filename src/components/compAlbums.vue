@@ -2,35 +2,15 @@
 
 <section class="albums">
         <table>
-            <tr class="albums__head">
-                <th class="albums__del"></th>
-                <th class="albums__title"><span>Titres</span></th>
-                <th class="albums__size"></th>
+            <tr class="lists__head">
+                <th class="lists__del"></th>
+                <th class="lists__title"><span>Titres</span></th>
+                <th class="lists__size"></th>
             </tr>
-            <tr class="albums__element">
-                <td class="albums__del"></td>
-                <td class="albums__title">Album 1</td>
-                <td class="albums__size"></td>
-            </tr>
-            <tr class="albums__element">
-                <td class="albums__del"></td>
-                <td class="albums__title">Album 2</td>
-                <td class="albums__size"></td>
-            </tr>
-            <tr class="albums__element">
-                <td class="albums__del"></td>
-                <td class="albums__title">Album 3</td>
-                <td class="albums__size"></td>
-            </tr>
-            <tr class="albums__element">
-                <td class="albums__del"></td>
-                <td class="albums__title">Album 4</td>
-                <td class="albums__size"></td>
-            </tr>
-            <tr class="albums__element">
-                <td class="albums__del"></td>
-                <td class="albums__title">Album 5</td>
-                <td class="albums__size"></td>
+            <tr v-for="item in ALBUMS" :key="item.id" class="lists__element">
+                <td class="lists__del"></td>
+                <td class="lists__title">{{item.name}}</td>
+                <td class="lists__size"></td>
             </tr>
         </table>
     </section>
@@ -38,11 +18,13 @@
 </template>
 
 <script>
+  import { ALBUMS } from '../data.js'
+
 export default {
   name: 'compAlbums',
   data () {
     return {
-      msg: ''
+      ALBUMS
     }
   }
 }
@@ -78,16 +60,16 @@ export default {
         cursor: pointer;
     }
         
-        .albums__del {
+        .lists__del {
             width: 6rem;
             padding-left: 2rem;
             color: #000;
             font-weight: bold;
         }
-        .albums__title {
+        .lists__title {
             text-align: left;
         }
-        .albums__size {
+        .lists__size {
             width: 6rem;
             text-align: right;
             padding-right: 2rem;

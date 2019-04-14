@@ -40,3 +40,5 @@ var ALBUMS = [
     name: 'Album 4'
   }
 ];
+
+export { PLAYLISTS, ALBUMS }
