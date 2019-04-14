@@ -9,11 +9,6 @@
 <script>
 export default {
   name: 'compHeader',
-  data () {
-    return {
-      title: page
-    }
-  },
   props: {
    page: {
     type: String,

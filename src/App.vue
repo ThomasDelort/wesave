@@ -1,59 +1,57 @@
 <template>
 
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <!DOCTYPE html>
+  <html lang="fr">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 
-    <title>Test</title>
-</head>
-<body>
-    <compHeader :page=page></compHeader>
-   <!-- <compNav></compNav> -->
-
-      <nav>
-        <button v-on:click="clickAlbum()" class="nav__btn-albums active">Mes albums</button>
-        <button v-on:click="clickPlaylists()" class="nav__btn-playlists">Mes playlists</button>
-    </nav>
-
-    <compAlbums v-if="page === 'albums'"></compAlbums>
-
-</body>
-</html>
+      <title>Test</title>
+  </head>
+  <body>
+      <compHeader :page=page></compHeader>
+      <compNav @clicked="ClickButton"></compNav>
+      <compAlbums v-if="page === 'albums'"></compAlbums>
+      <compPlaylists v-if="page === 'playlists'"></compPlaylists>
+  </body>
+  </html>
 
 </template>
 
 <script>
-import compHeader from './components/compHeader.vue'
-import compNav from './components/compNav.vue'
-import compAlbums from './components/compAlbums.vue'
+  import compHeader from './components/compHeader.vue'
+  import compNav from './components/compNav.vue'
+  import compAlbums from './components/compAlbums.vue'
+  import compPlaylists from './components/compPlaylists.vue'
 
-let page = "albums";
+  let page = "albums";
 
-export default {
-  name: 'app',
-  components: {
-    compHeader,
-    compNav,
-    compAlbums
-  },
-  data () {
-    return {
-      page
-    }
-  },
-    methods: {
-    clickAlbum: function () {
-      this.page = "albums";
+  export default {
+    name: 'app',
+    components: {
+      compHeader,
+      compNav,
+      compAlbums,
+      compPlaylists
     },
-    clickPlaylists: function () {
-      this.page = "playlists";
+    data () {
+      return {
+        page
+      }
+    },
+      methods: {
+      ClickButton: function(button) {
+        if(button === "albums") {
+          this.page = "albums";
+        }
+        if(button === "playlists") {
+          this.page = "playlists";
+        }
+      }
     }
   }
-}
 </script>
 
 <style lang="scss">

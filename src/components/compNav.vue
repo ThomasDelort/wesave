@@ -17,10 +17,10 @@ export default {
   },
     methods: {
     clickAlbum: function () {
-      compHeader.title = "Mes albums"
+      this.$emit('clicked', 'albums')
     },
     clickPlaylists: function () {
-      compHeader.title = "Mes playlists"
+     this.$emit('clicked', 'playlists')
     }
   }
 }

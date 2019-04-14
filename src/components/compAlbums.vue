@@ -5,32 +5,32 @@
             <tr class="albums__head">
                 <th class="albums__del"></th>
                 <th class="albums__title"><span>Titres</span></th>
-                <th class="albums__size"><span>Taille</span></th>
+                <th class="albums__size"></th>
             </tr>
             <tr class="albums__element">
                 <td class="albums__del"></td>
                 <td class="albums__title">Album 1</td>
-                <td class="albums__size">15</td>
+                <td class="albums__size"></td>
             </tr>
             <tr class="albums__element">
                 <td class="albums__del"></td>
                 <td class="albums__title">Album 2</td>
-                <td class="albums__size">10</td>
+                <td class="albums__size"></td>
             </tr>
             <tr class="albums__element">
-                <td class="albums__del">&#10680;</td>
+                <td class="albums__del"></td>
                 <td class="albums__title">Album 3</td>
-                <td class="albums__size">0</td>
+                <td class="albums__size"></td>
             </tr>
             <tr class="albums__element">
-                <td class="albums__del">&#10680;</td>
+                <td class="albums__del"></td>
                 <td class="albums__title">Album 4</td>
-                <td class="albums__size">0</td>
+                <td class="albums__size"></td>
             </tr>
             <tr class="albums__element">
                 <td class="albums__del"></td>
                 <td class="albums__title">Album 5</td>
-                <td class="albums__size">20</td>
+                <td class="albums__size"></td>
             </tr>
         </table>
     </section>
@@ -50,7 +50,7 @@ export default {
 
 <style lang="scss">
 
-.albums {
+.albums, .playlists {
     background-color: #212121;
     padding: 0 2rem;
 
@@ -93,8 +93,5 @@ export default {
             padding-right: 2rem;
         }
 }
-        
-
-
 
 </style>
